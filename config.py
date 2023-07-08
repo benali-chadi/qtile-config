@@ -130,6 +130,9 @@ keys = [
     # Brigtness
     Key([mod], 'F5', lazy.spawn('xbacklight -dec 5')),
     Key([mod], 'F6', lazy.spawn('xbacklight -inc 5')), 
+
+    # Switch Monitors
+    Key([mod], 'period', lazy.next_screen(), desc="Next monitor"),
 ]
 
 groups = [Group(i) for i in "123456789"]
