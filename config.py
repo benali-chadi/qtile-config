@@ -112,6 +112,8 @@ keys = [
         desc="Launch Firefox"),
     Key([mod], "c", lazy.spawn("vscodium")),
     Key([mod], "q", lazy.spawn("qutebrowser")),
+    # Take Screenshot
+    Key([], "Print", lazy.spawn("scrot -s -e 'mv $f ~/screenshots/'")),
 
     # Media hotkeys
     Key([mod], 'F3', lazy.spawn('amixer -q sset Master 5%+')),
