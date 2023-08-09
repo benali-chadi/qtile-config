@@ -208,22 +208,6 @@ screens = [
                     padding = 10,
                 ),
 		widget.Image(
-		    filename='~/Downloads/icons/vscode.png',
-		    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('vscodium')},
-		),
-                widget.Sep(
-                    linewidth = 1,
-                    padding = 10,
-                ),
-		widget.Image(
-		    filename='~/Downloads/icons/Android_Studio.png',
-		    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('android-studio')},
-		),
-                widget.Sep(
-                    linewidth = 1,
-                    padding = 10,
-                ),
-		widget.Image(
 		    filename='~/Downloads/icons/steam.png',
 		    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('steam')},
 		),
@@ -264,8 +248,8 @@ screens = [
                     padding = 10,
                 ),
 		widget.Image(
-		    filename='~/Downloads/icons/book.png',
-		    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('okular')},
+		    filename='~/Downloads/icons/inkscape.png',
+		    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('/home/chadi/Downloads/Inkscape-0e150ed-x86_64.AppImage')},
 		),
                 widget.Sep(
                     linewidth = 1,
