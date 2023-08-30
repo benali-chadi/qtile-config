@@ -30,7 +30,10 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayoutIcon(scale=0.7),
+                widget.Sep(
+                    linewidth = 0,
+                    padding = 10,
+                ),
                 widget.GroupBox(
                     font="Ubuntu Bold",
                     fontsize=12,
@@ -81,7 +84,7 @@ screens = [
 		    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('telegram-desktop')},
 		),
                 widget.Sep(
-                    linewidth = 1,
+                    linewidth = 0,
                     padding = 10,
                 ),
 		widget.Image(
@@ -117,7 +120,8 @@ screens = [
                 ),
                 widget.BatteryIcon(
                     background=colors[9],
-                    padding=5
+                    padding=5,
+                    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("terminator -e /home/chadi/myScripts/show-bat")},
                 ),
                 widget.TextBox(
                     text='◢',
