@@ -76,17 +76,6 @@ groups.extend([
                 warp_pointer = False,
             ),
             DropDown(
-                'browser',
-                terminal + ' -e w3m www.google.com',
-                height = 0.7,
-                width = 0.7,
-                x = 0.12,
-                y = 0.13,
-                on_focus_lost_hide = False,
-                opacity = 0.85,
-                warp_pointer = False,
-            ),
-            DropDown(
                 'freetube',
                 'freetube',
                 height = 0.4,
@@ -104,6 +93,5 @@ keys.extend([
     Key([], 'F12', lazy.group['scratchpad'].dropdown_toggle('terminal')),
     Key([], 'F10', lazy.group['scratchpad'].dropdown_toggle('htop')),
     Key([], 'F9', lazy.group['scratchpad'].dropdown_toggle('sound control')),
-    Key([], 'F8', lazy.group['scratchpad'].dropdown_toggle('browser')),
-    Key([], 'F7', lazy.group['scratchpad'].dropdown_toggle('freetube')),
+    Key([], 'F8', lazy.group['scratchpad'].dropdown_toggle('freetube')),
 ])
