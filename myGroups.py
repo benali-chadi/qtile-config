@@ -1,16 +1,16 @@
-from libqtile.config import Group, Key
+from libqtile.config import Group, Key, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from myKeys import keys
-from common import mod
+from common import mod, terminal
 
+### Workspaces
 group_icons = [
-                "✔",
-                " ",
-                " ",
-                "🧪",
-                " ",
-                " ",
-                "📖",
+                "𝟭 ✔",
+                "𝟮  ",
+                "𝟯  ",
+                "𝟰 🪧",
+                "𝟱  ",
+                "𝟲  ",
                ]
 groups_spawn = [
     [
@@ -20,11 +20,10 @@ groups_spawn = [
     ['alacritty', 'qutebrowser'],
     [], [], [], [],
 ]
-# groups = [Group(i) for i in "123456789"]
+
 groups = [
    Group(i, label=g, layout="monadtall", spawn=s ) for i, g, s in zip("123456", group_icons, groups_spawn)
 ]
-# groups = [Group(i) for i in group_icons]
 
 for i in groups:
     keys.extend([
@@ -40,3 +39,47 @@ for i in groups:
         # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
         #     desc="move focused window to group {}".format(i.name)),
     ])
+
+### Scratchpad
+
+groups.extend([
+    ScratchPad('scratchpad', [
+            DropDown(
+                "terminal",
+                terminal,
+                x=0.15,
+                y=0.2,
+                height=0.6,
+                width=0.7,
+                opacity=0.9,
+                on_focus_lost_hide=True
+            ),
+            DropDown(
+                'htop',
+                terminal + ' -e htop',
+                x=0.15,
+                y=0.2,
+                height=0.6,
+                width=0.7,
+                opacity=0.9,
+                on_focus_lost_hide=True
+            ),
+            DropDown(
+                'sound control',
+                'pavucontrol',
+                height = 0.8,
+                width = 0.8,
+                x = 0.1,
+                y = 0.0,
+                on_focus_lost_hide = False,
+                opacity = 0.85,
+                warp_pointer = False,
+            ),
+    ])
+])
+
+keys.extend([
+    Key([], 'F12', lazy.group['scratchpad'].dropdown_toggle('terminal')),
+    Key([], 'F10', lazy.group['scratchpad'].dropdown_toggle('htop')),
+    Key([], 'F9', lazy.group['scratchpad'].dropdown_toggle('sound control')),
+])

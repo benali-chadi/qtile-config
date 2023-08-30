@@ -120,7 +120,7 @@ screens = [
                 ),
                 widget.BatteryIcon(
                     background=colors[9],
-                    padding=5,
+                    padding=3,
                     mouse_callbacks={'Button1': lambda: qtile.cmd_spawn("terminator -e /home/chadi/myScripts/show-bat")},
                 ),
                 widget.TextBox(

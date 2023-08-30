@@ -78,4 +78,7 @@ keys = [
 
     # Switch Monitors
     Key([mod], 'period', lazy.next_screen(), desc="Next monitor"),
+
+    # Hide/show bar
+    Key([mod], 'b', lazy.hide_show_bar()),
 ]
