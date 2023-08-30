@@ -78,7 +78,7 @@ groups.extend([
             DropDown(
                 'freetube',
                 'freetube',
-                height = 0.4,
+                height = 0.3,
                 width = 0.3,
                 x = 0.7,
                 y = 0.002,
