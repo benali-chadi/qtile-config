@@ -1,5 +1,6 @@
 from libqtile.config import Screen
 from libqtile import bar, widget, qtile
+
 from common import terminal
 
 colors = [["#292d3e", "#292d3e"],  # panel background
@@ -96,10 +97,15 @@ screens = [
 		    mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('/home/chadi/Downloads/Inkscape-0e150ed-x86_64.AppImage')},
 		),
                 widget.Sep(
-                    linewidth = 1,
+                    linewidth = 2,
                     padding = 10,
                 ),
-                widget.Prompt(),
+                widget.Prompt(
+                    font="Ubuntu Mono",
+                    padding=10,
+                    foreground=colors[2],
+                    background=colors[1]
+                ),
                 widget.WindowName(),
 
                 widget.TextBox(
@@ -171,21 +177,21 @@ screens = [
                 ),
                 widget.TextBox(
                     text='◢',
-                    foreground=colors[8],
+                    foreground=colors[3],
                     background=colors[9],
                     padding=0,
                     fontsize=37
                 ),
                 widget.Clock(
                     foreground=colors[7],
-                    background=colors[8],
+                    background=colors[3],
                     format="%B %d  [ %H:%M ]",
                 ),
                 widget.Sep(
                     linewidth=0,
                     padding=10,
                     foreground=colors[0],
-                    background=colors[8]
+                    background=colors[3]
                 ),
             ],
             size=20,
