@@ -86,6 +86,17 @@ groups.extend([
                 opacity = 0.85,
                 warp_pointer = False,
             ),
+            DropDown(
+                "browser",
+                'qutebrowser --temp-basedir --config-py /home/chadi/.config/qutebrowser/config.py',
+                x=0.15,
+                y=0.2,
+                height=0.6,
+                width=0.7,
+                opacity=0.9,
+                on_focus_lost_hide=False,
+                warp_pointer = False,
+            ),
     ])
 ])
 
@@ -94,4 +105,5 @@ keys.extend([
     Key([], 'F10', lazy.group['scratchpad'].dropdown_toggle('htop')),
     Key([], 'F9', lazy.group['scratchpad'].dropdown_toggle('sound control')),
     Key([], 'F8', lazy.group['scratchpad'].dropdown_toggle('freetube')),
+    Key([], 'F7', lazy.group['scratchpad'].dropdown_toggle('browser')),
 ])
