@@ -2,6 +2,7 @@ from libqtile.config import Group, Key, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from myKeys import keys
 from common import mod, terminal
+import os
 
 ### Workspaces
 group_icons = [
@@ -88,7 +89,7 @@ groups.extend([
             ),
             DropDown(
                 "browser",
-                'qutebrowser --temp-basedir --config-py /home/chadi/.config/qutebrowser/config.py',
+                'qutebrowser --basedir ' + os.environ['HOME'] + '/.qute_scratchpad/ --config-py /home/chadi/.config/qutebrowser/config.py',
                 x=0.15,
                 y=0.2,
                 height=0.6,
